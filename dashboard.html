@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard - TravelX</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         NAVBAR
+         ========================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            TravelX
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="destinations.html">
+                Destinations
+            </a>
+
+            <a href="accommodations.html">
+                Hotels
+            </a>
+
+            <a href="transportation.html">
+                Transportation
+            </a>
+
+            <a href="packages.html">
+                Packages
+            </a>
+
+            <button
+                class="logout-btn"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==========================================
+         MAIN DASHBOARD
+         ========================================== -->
+
+    <main class="page-container">
+
+
+        <!-- Welcome -->
+
+        <section class="dashboard-header">
+
+            <h1>
+                Welcome,
+                <span id="userName">
+                    Traveler
+                </span>
+            </h1>
+
+            <p>
+                Your personalized TravelX dashboard
+            </p>
+
+        </section>
+
+
+        <!-- ======================================
+             USER PROFILE
+             ====================================== -->
+
+        <section class="dashboard-section">
+
+            <h2>
+                My Travel Preferences
+            </h2>
+
+
+            <div class="card-grid">
+
+
+                <div class="info-card">
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <p id="userEmail">
+                        Loading...
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>
+                        Preferred Destination
+                    </h3>
+
+                    <p id="userDestination">
+                        Loading...
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>
+                        Budget
+                    </h3>
+
+                    <p id="userBudget">
+                        Loading...
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>
+                        Trip Duration
+                    </h3>
+
+                    <p id="userDuration">
+                        Loading...
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>
+                        Interests
+                    </h3>
+
+                    <p id="userInterests">
+                        Loading...
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             RECOMMENDATIONS
+             ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Personalized Recommendations
+                    </h2>
+
+                    <p>
+                        Travel packages selected
+                        according to your preferences.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="recommendations"
+                class="card-grid"
+            >
+
+                <p>
+                    Loading recommendations...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             TRAVEL PACKAGE BOOKINGS
+             ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        My Travel Package Bookings
+                    </h2>
+
+                    <p>
+                        Your booked travel packages
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="bookings"
+                class="card-grid"
+            >
+
+                <p>
+                    Loading bookings...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             TRANSPORTATION BOOKINGS
+             ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        My Transportation Bookings
+                    </h2>
+
+                    <p>
+                        Your booked flights and buses
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="transportationBookings"
+                class="card-grid"
+            >
+
+                <p>
+                    Loading transportation bookings...
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+
+    <script src="js/config.js"></script>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

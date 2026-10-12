@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | TravelX</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="auth-page">
+
+<div class="auth-container">
+
+    <div class="auth-brand">
+        <div class="logo">
+            Travel<span>X</span>
+        </div>
+
+        <h1>Welcome Back</h1>
+
+        <p>
+            Login to continue planning your personalized journey.
+        </p>
+    </div>
+
+
+    <div class="auth-card">
+
+        <h2>Login</h2>
+
+        <p class="form-subtitle">
+            Access your TravelX account
+        </p>
+
+        <form id="loginForm">
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                required
+            >
+
+
+            <button type="submit" class="primary-btn full-btn">
+                Login
+            </button>
+
+        </form>
+
+        <div id="message"></div>
+
+        <p class="auth-link">
+            Don't have an account?
+            <a href="register.html">Create Account</a>
+        </p>
+
+        <p class="auth-link">
+            <a href="index.html">← Back to Home</a>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+
+</body>
+</html>

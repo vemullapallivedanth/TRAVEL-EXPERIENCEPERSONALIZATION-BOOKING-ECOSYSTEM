@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard - TravelX</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         NAVBAR
+         ========================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            TravelX Admin
+        </div>
+
+        <nav>
+
+            <a href="admin.html">
+                Dashboard
+            </a>
+
+            <a href="dashboard.html">
+                User View
+            </a>
+
+            <button
+                class="logout-btn"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==========================================
+         MAIN
+         ========================================== -->
+
+    <main class="page-container">
+
+
+        <section class="dashboard-header">
+
+            <h1>
+                Admin Dashboard
+            </h1>
+
+            <p>
+                Manage TravelX travel services
+            </p>
+
+        </section>
+
+
+        <!-- ======================================
+             SUMMARY
+             ====================================== -->
+
+        <section class="dashboard-section">
+
+            <div
+                id="summaryCards"
+                class="card-grid"
+            >
+
+                <div class="info-card">
+
+                    <h3>
+                        Users
+                    </h3>
+
+                    <p id="totalUsers">
+                        0
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>
+                        Destinations
+                    </h3>
+
+                    <p id="totalDestinations">
+                        0
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>
+                        Packages
+                    </h3>
+
+                    <p id="totalPackages">
+                        0
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>
+                        Bookings
+                    </h3>
+
+                    <p id="totalBookings">
+                        0
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             DESTINATIONS
+             ====================================== -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+
+                    <h2>
+                        Destinations
+                    </h2>
+
+                    <p>
+                        Add and manage destinations
+                    </p>
+
+                </div>
+
+                <button
+                    class="admin-add-btn"
+                    onclick="showDestinationForm()"
+                >
+                    + Add Destination
+                </button>
+
+            </div>
+
+
+            <div
+                id="destinationForm"
+                class="admin-form"
+                style="display:none;"
+            >
+
+                <h3>
+                    Add Destination
+                </h3>
+
+                <input
+                    type="text"
+                    id="destinationName"
+                    placeholder="Destination Name"
+                >
+
+                <input
+                    type="text"
+                    id="destinationState"
+                    placeholder="State"
+                >
+
+                <input
+                    type="text"
+                    id="destinationCountry"
+                    placeholder="Country"
+                    value="India"
+                >
+
+                <input
+                    type="text"
+                    id="destinationCategory"
+                    placeholder="Category"
+                >
+
+                <input
+                    type="number"
+                    id="destinationBudget"
+                    placeholder="Average Budget"
+                >
+
+                <textarea
+                    id="destinationDescription"
+                    placeholder="Description"
+                ></textarea>
+
+
+                <button
+                    class="admin-add-btn"
+                    onclick="addDestination()"
+                >
+                    Save Destination
+                </button>
+
+            </div>
+
+
+            <div
+                id="destinationList"
+                class="admin-list"
+            ></div>
+
+        </section>
+
+
+        <!-- ======================================
+             ACCOMMODATIONS
+             ====================================== -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+
+                    <h2>
+                        Accommodations
+                    </h2>
+
+                    <p>
+                        Manage hotels and resorts
+                    </p>
+
+                </div>
+
+                <button
+                    class="admin-add-btn"
+                    onclick="showAccommodationForm()"
+                >
+                    + Add Accommodation
+                </button>
+
+            </div>
+
+
+            <div
+                id="accommodationForm"
+                class="admin-form"
+                style="display:none;"
+            >
+
+                <h3>
+                    Add Accommodation
+                </h3>
+
+                <input
+                    type="text"
+                    id="accommodationName"
+                    placeholder="Hotel / Resort Name"
+                >
+
+                <input
+                    type="text"
+                    id="accommodationDestination"
+                    placeholder="Destination"
+                >
+
+                <input
+                    type="text"
+                    id="accommodationType"
+                    placeholder="Type"
+                >
+
+                <input
+                    type="number"
+                    id="accommodationPrice"
+                    placeholder="Price Per Night"
+                >
+
+                <input
+                    type="number"
+                    id="accommodationRating"
+                    placeholder="Rating"
+                    step="0.1"
+                >
+
+                <input
+                    type="text"
+                    id="accommodationFacilities"
+                    placeholder="Facilities"
+                >
+
+
+                <button
+                    class="admin-add-btn"
+                    onclick="addAccommodation()"
+                >
+                    Save Accommodation
+                </button>
+
+            </div>
+
+
+            <div
+                id="accommodationList"
+                class="admin-list"
+            ></div>
+
+        </section>
+
+
+        <!-- ======================================
+             TRANSPORTATION
+             ====================================== -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+
+                    <h2>
+                        Transportation
+                    </h2>
+
+                    <p>
+                        Manage flights, buses and other
+                        transportation
+                    </p>
+
+                </div>
+
+                <button
+                    class="admin-add-btn"
+                    onclick="showTransportationForm()"
+                >
+                    + Add Transportation
+                </button>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <div
+                id="transportationForm"
+                class="admin-form"
+                style="display:none;"
+            >
+
+                <h3>
+                    Add Transportation
+                </h3>
+
+
+                <label>
+                    Type
+                </label>
+
+                <select
+                    id="transportationType"
+                >
+
+                    <option value="Flight">
+                        Flight
+                    </option>
+
+                    <option value="Bus">
+                        Bus
+                    </option>
+
+                    <option value="Train">
+                        Train
+                    </option>
+
+                    <option value="Cab">
+                        Cab
+                    </option>
+
+                </select>
+
+
+                <label>
+                    Provider
+                </label>
+
+                <input
+                    type="text"
+                    id="transportationProvider"
+                    placeholder="Provider"
+                >
+
+
+                <label>
+                    Source
+                </label>
+
+                <input
+                    type="text"
+                    id="transportationSource"
+                    placeholder="Source City"
+                >
+
+
+                <label>
+                    Destination
+                </label>
+
+                <input
+                    type="text"
+                    id="transportationDestination"
+                    placeholder="Destination City"
+                >
+
+
+                <label>
+                    Price
+                </label>
+
+                <input
+                    type="number"
+                    id="transportationPrice"
+                    placeholder="Price"
+                >
+
+
+                <label>
+                    Departure Time
+                </label>
+
+                <input
+                    type="time"
+                    id="transportationDeparture"
+                >
+
+
+                <label>
+                    Arrival Time
+                </label>
+
+                <input
+                    type="time"
+                    id="transportationArrival"
+                >
+
+
+                <div class="admin-form-buttons">
+
+                    <button
+                        class="admin-add-btn"
+                        onclick="addTransportation()"
+                    >
+                        Save Transportation
+                    </button>
+
+                    <button
+                        class="admin-cancel-btn"
+                        onclick="hideTransportationForm()"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- LIST -->
+
+            <div
+                id="transportationList"
+                class="admin-list"
+            ></div>
+
+        </section>
+
+
+        <!-- ======================================
+             PACKAGES
+             ====================================== -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+
+                    <h2>
+                        Travel Packages
+                    </h2>
+
+                    <p>
+                        Manage travel packages
+                    </p>
+
+                </div>
+
+                <button
+                    class="admin-add-btn"
+                    onclick="showPackageForm()"
+                >
+                    + Add Package
+                </button>
+
+            </div>
+
+
+            <div
+                id="packageForm"
+                class="admin-form"
+                style="display:none;"
+            >
+
+                <h3>
+                    Add Travel Package
+                </h3>
+
+                <input
+                    type="text"
+                    id="packageName"
+                    placeholder="Package Name"
+                >
+
+                <input
+                    type="text"
+                    id="packageDestination"
+                    placeholder="Destination"
+                >
+
+                <input
+                    type="number"
+                    id="packageDuration"
+                    placeholder="Duration in Days"
+                >
+
+                <input
+                    type="number"
+                    id="packagePrice"
+                    placeholder="Price"
+                >
+
+                <input
+                    type="text"
+                    id="packageHotel"
+                    placeholder="Hotel"
+                >
+
+                <input
+                    type="text"
+                    id="packageActivities"
+                    placeholder="Activities"
+                >
+
+                <textarea
+                    id="packageItinerary"
+                    placeholder="Itinerary"
+                ></textarea>
+
+                <input
+                    type="number"
+                    id="packageSeats"
+                    placeholder="Available Seats"
+                >
+
+
+                <button
+                    class="admin-add-btn"
+                    onclick="addPackage()"
+                >
+                    Save Package
+                </button>
+
+            </div>
+
+
+            <div
+                id="packageList"
+                class="admin-list"
+            ></div>
+
+        </section>
+
+
+        <!-- ======================================
+             BOOKINGS
+             ====================================== -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+
+                    <h2>
+                        Travel Package Bookings
+                    </h2>
+
+                    <p>
+                        View customer bookings
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="bookingList"
+                class="admin-list"
+            ></div>
+
+        </section>
+
+
+        <!-- ======================================
+             TRANSPORTATION BOOKINGS
+             ====================================== -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+
+                    <h2>
+                        Transportation Bookings
+                    </h2>
+
+                    <p>
+                        View booked flights, buses
+                        and other transportation
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="transportationBookingList"
+                class="admin-list"
+            ></div>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="js/config.js"></script>
+
+    <script src="js/admin.js"></script>
+
+</body>
+
+</html>

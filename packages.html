@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Travel Packages | TravelX</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        Travel<span>X</span>
+    </div>
+
+    <nav>
+<a href="destinations.html">Destinations</a>
+
+<a href="accommodations.html">Accommodations</a>
+
+<a href="transportation.html">Transportation</a>
+
+<a href="packages.html">Packages</a>
+        <a href="dashboard.html">Dashboard</a>
+
+        <a href="packages.html">Packages</a>
+
+        <button
+            onclick="logout()"
+            class="logout-btn">
+            Logout
+        </button>
+
+    </nav>
+
+</header>
+
+
+<main class="page-container">
+
+    <div class="page-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                EXPLORE TRAVEL
+            </p>
+
+            <h1>Travel Packages</h1>
+
+            <p>
+                Discover curated travel experiences.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="filter-bar">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search destination or package..."
+        >
+
+        <select id="destinationFilter">
+
+            <option value="">All Destinations</option>
+
+        </select>
+
+    </div>
+
+
+    <div id="packageGrid"
+         class="package-grid">
+
+        <div class="loading">
+            Loading packages...
+        </div>
+
+    </div>
+
+</main>
+
+
+<script src="js/config.js"></script>
+<script src="js/packages.js"></script>
+
+</body>
+</html>

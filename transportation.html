@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Transportation - TravelX</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         NAVBAR
+         ========================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            TravelX
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="destinations.html">
+                Destinations
+            </a>
+
+            <a href="accommodations.html">
+                Hotels
+            </a>
+
+            <a
+                href="transportation.html"
+                class="active"
+            >
+                Transportation
+            </a>
+
+            <a href="packages.html">
+                Packages
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+         ========================================== -->
+
+    <main class="page-container">
+
+        <div class="page-header">
+
+            <h1>
+                Transportation
+            </h1>
+
+            <p>
+                Find and book flights and buses
+                for your trip.
+            </p>
+
+        </div>
+
+
+        <!-- Transportation cards -->
+
+        <div
+            id="transportationList"
+            class="card-grid"
+        >
+
+            <div class="loading">
+                Loading transportation...
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+
+    <script src="js/config.js"></script>
+
+    <script src="js/transportation.js"></script>
+
+</body>
+
+</html>

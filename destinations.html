@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelX - Destinations</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">TravelX</div>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="destinations.html" class="active">Destinations</a>
+        <a href="accommodations.html">Accommodations</a>
+        <a href="transportation.html">Transportation</a>
+        <a href="packages.html">Packages</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <section class="page-header">
+        <h1>Explore Destinations</h1>
+        <p>Discover amazing places for your next journey.</p>
+    </section>
+
+    <div id="destinationList" class="card-grid">
+        <p>Loading destinations...</p>
+    </div>
+
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/destinations.js"></script>
+
+</body>
+</html>
