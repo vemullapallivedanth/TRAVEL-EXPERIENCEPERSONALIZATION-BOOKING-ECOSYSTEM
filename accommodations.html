@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>TravelX - Accommodations</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">TravelX</div>
+
+    <nav>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="destinations.html">
+            Destinations
+        </a>
+
+        <a href="accommodations.html"
+           class="active">
+            Accommodations
+        </a>
+
+        <a href="transportation.html">
+            Transportation
+        </a>
+
+        <a href="packages.html">
+            Packages
+        </a>
+
+        <a href="#"
+           onclick="logout()">
+            Logout
+        </a>
+
+    </nav>
+
+</header>
+
+<main class="container">
+
+    <section class="page-header">
+
+        <h1>Accommodations</h1>
+
+        <p>
+            Find comfortable stays for your trip.
+        </p>
+
+    </section>
+
+    <div id="accommodationList"
+         class="card-grid">
+
+        <p>Loading accommodations...</p>
+
+    </div>
+
+</main>
+
+<script src="js/config.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/accommodations.js"></script>
+
+</body>
+
+</html>
